@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Doo</title>
+    <title>To-Do</title>
 </head>
 <body>
-    
+    <h2>Hi Welcome!</h2>
+    <input type="text" id="task" placeholder="Create a To-Do">
+    <button onclick="addTodo()">Create</button>
+    <script>
+        let counter = 1;
+        let todo;
+        async function addTodo(){
+            todo = document.getElementById('task').value;
+            const addtodo = document.createElement('p');
+            addtodo.setAttribute('id',counter)
+            addtodo.innerHTML = "<p>"+todo+"</p><button onclick='deleteTask("+counter+")'>Delete</button>"
+
+            const update = document.querySelector('body').appendChild(addtodo);
+            alert(todo + " added successfully!")
+            
+        }
+        async function deleteTask(index){
+            const deletetodo = document.getElementById(index);
+            await alert("Please Confirm to delete this ")
+            deletetodo.parentNode.removeChild(deletetodo);
+        }
+    </script>
 </body>
 </html>
