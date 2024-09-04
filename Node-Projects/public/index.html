@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Origin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <script>
+        function addSum(){
+            const a = document.getElementById('a').value;
+            const b = document.getElementById('b').value;
+            axios.post("http://localhost:3000/sum",{
+                a : a,
+                b : b
+            })
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="a" placeholder="Enter First Nummber">
+    <input type="number" id="b" placeholder="Enter Second Number">
+    <button onclick="addSum()">Add</button>
+</body>
+</html>
